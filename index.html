@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASET/EDIT — Katalog Aplikasi Editing</title>
+<meta name="description" content="Katalog aplikasi editing pilihan: video, foto, audio, desain, motion, dan utilitas. Gratis, tanpa login, langsung unduh.">
+<meta name="theme-color" content="#2E4BFF">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<noscript>
+  <style>.intro{display:none!important}.stamp{opacity:1!important;translate:0 0!important;scale:1!important;rotate:none!important}</style>
+  <p class="nojs">JavaScript mati &mdash; katalog aplikasi tidak bisa tampil. Aktifkan JavaScript lalu refresh.</p>
+</noscript>
+
+<!-- intro pembuka (bisa diklik buat skip) -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-panel ip-left"></div>
+  <div class="intro-panel ip-right"></div>
+  <div class="intro-stage">
+    <span class="intro-star">&#10022;</span>
+    <div class="intro-words">
+      <span class="iw iw-blue">ASET</span>
+      <span class="iw iw-slash">/</span>
+      <span class="iw iw-red">EDIT</span>
+    </div>
+    <p class="intro-badge">KATALOG APLIKASI EDITING</p>
+  </div>
+  <span class="intro-hint">KLIK BUAT LEWAT</span>
+  <div class="intro-fly">
+    <i style="--dx:-170px;--dy:-150px;--rot:-120deg;color:var(--blue)">&#10022;</i>
+    <i style="--dx:160px;--dy:-170px;--rot:140deg;color:var(--red)">&#10022;</i>
+    <i style="--dx:-215px;--dy:85px;--rot:-90deg;color:var(--yellow)">&#9733;</i>
+    <i style="--dx:200px;--dy:130px;--rot:110deg;color:var(--green)">&#10022;</i>
+    <i style="--dx:10px;--dy:-215px;--rot:180deg;color:var(--red)">&#9733;</i>
+    <i style="--dx:65px;--dy:205px;--rot:-160deg;color:var(--blue)">&#10022;</i>
+  </div>
+</div>
+
+<!-- kursor mouse custom (oval + kabel) -->
+<svg class="cursor-wire is-hidden" id="curWire" aria-hidden="true">
+  <path class="wire-back" id="wireBack" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="wire-front" id="wirePath" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<div class="cursor-plug is-hidden" id="curPlug" aria-hidden="true"><i></i></div>
+<div class="cursor-mouse is-hidden" id="curMouse" aria-hidden="true">
+  <div class="mouse-tilt" id="curTilt">
+    <div class="mouse-inner">
+      <span class="m-split"></span>
+      <span class="m-wheel"></span>
+    </div>
+  </div>
+</div>
+
+<header class="nav-wrap">
+  <nav class="nav" aria-label="Utama">
+    <a class="brand" href="#">
+      <span class="brand-mark">&#10022;</span>
+      ASET<span class="slash">/</span>EDIT
+    </a>
+    <div class="nav-right">
+      <span class="nav-count" id="navCount">00 APPS</span>
+      <button class="search-jump" id="searchJump" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        CARI
+        <kbd>/</kbd>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero container">
+    <div class="hero-copy">
+      <span class="sticker-hero stamp">&#9733; <b id="heroSticker">00</b> APLIKASI PILIHAN</span>
+      <h1 class="hero-title">
+        <span class="h-line stamp"><span class="w-plain">GUDANG</span></span>
+        <span class="h-line stamp"><span class="slab-blue">APLIKASI</span></span>
+        <span class="h-line stamp"><span class="marker">EDITING</span></span>
+      </h1>
+      <p class="lede stamp">
+        Katalog aplikasi editing pilihan &mdash; video, foto, audio, desain,
+        sampai utilitas. Klik tab buat filter, tekan <kbd>/</kbd> buat nyari,
+        lalu klik tombol unduh.
+      </p>
+      <div class="cta-row stamp">
+        <a class="btn-solid magnet" id="ctaKatalog" href="#katalog" data-magnet>LIHAT KATALOG <span class="ic">&#8595;</span></a>
+      </div>
+      <p class="cta-note stamp">GRATIS &middot; TANPA LOGIN &middot; LANGSUNG UNDUH</p>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="burst"></div>
+      <div class="dotpatch"></div>
+      <span class="spark s1">&#10022;</span>
+      <span class="spark s2">&#10022;</span>
+      <span class="spark s3">&#9733;</span>
+
+      <figure class="polaroid p1">
+        <span class="pico" style="--c:#2E4BFF">VE</span>
+        <figcaption>Video Editor</figcaption>
+      </figure>
+      <figure class="polaroid p2">
+        <i class="ptape"></i>
+        <span class="pico" style="--c:#FF4B33">PE</span>
+        <figcaption>Photo Editor</figcaption>
+      </figure>
+      <figure class="polaroid p3">
+        <span class="pico" style="--c:#FFC940;color:#101014">AE</span>
+        <figcaption>Audio Editor</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="stats container" aria-label="Statistik katalog">
+    <div class="stat s-blue stamp"><b data-count="0">0</b><span>APLIKASI</span></div>
+    <div class="stat s-yellow stamp"><b data-count="0">0</b><span>KATEGORI</span></div>
+    <div class="stat s-green stamp"><b data-count="0" data-suffix="%">0</b><span>GRATIS</span></div>
+  </section>
+
+  <div class="ribbons" aria-hidden="true">
+    <div class="ribbon r-blue">
+      <div class="ribbon-track">
+        <span>DOWNLOAD GRATIS <i>&#10022;</i> TANPA RIBET <i>&#10022;</i> TANPA LOGIN <i>&#10022;</i> TINGGAL PILIH &amp; UNDUH <i>&#10022;</i> </span>
+        <span>DOWNLOAD GRATIS <i>&#10022;</i> TANPA RIBET <i>&#10022;</i> TANPA LOGIN <i>&#10022;</i> TINGGAL PILIH &amp; UNDUH <i>&#10022;</i> </span>
+      </div>
+    </div>
+    <div class="ribbon r-ink">
+      <div class="ribbon-track rev">
+        <span>VIDEO <i>&#9733;</i> FOTO <i>&#9733;</i> AUDIO <i>&#9733;</i> DESAIN <i>&#9733;</i> MOTION <i>&#9733;</i> UTILITAS <i>&#9733;</i> PILIH, FILTER, UNDUH <i>&#9733;</i> </span>
+        <span>VIDEO <i>&#9733;</i> FOTO <i>&#9733;</i> AUDIO <i>&#9733;</i> DESAIN <i>&#9733;</i> MOTION <i>&#9733;</i> UTILITAS <i>&#9733;</i> PILIH, FILTER, UNDUH <i>&#9733;</i> </span>
+      </div>
+    </div>
+  </div>
+
+  <section class="container panel" id="katalog" aria-label="Filter aplikasi">
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="panel-body">
+      <div class="searchwrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="q" type="search" placeholder="ketik nama aplikasi..." autocomplete="off">
+        <kbd>/</kbd>
+      </div>
+      <p class="result" aria-live="polite">HASIL: <b id="count">00</b></p>
+    </div>
+  </section>
+
+  <section class="container grid" id="grid"></section>
+
+  <div class="container empty" id="empty" hidden>
+    <div class="zonk">ZONK!</div>
+    <p>TIDAK ADA APLIKASI YANG COCOK &mdash; COBA KATA KUNCI LAIN</p>
+  </div>
+
+</main>
+
+<footer class="foot">
+  <div class="container foot-inner">
+    <div class="foot-big" aria-hidden="true">ASET<span>/</span>EDIT</div>
+    <div class="foot-row">
+      <p>KATALOG APLIKASI EDITING &mdash; VIDEO &middot; FOTO &middot; AUDIO &middot; DESAIN</p>
+      <p>&copy; 2026 ASET/EDIT &middot; SEMUA HAK DILINDUNGI</p>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="toTop" type="button" aria-label="Kembali ke atas">&#8593;</button>
+
+<script src="apps.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
